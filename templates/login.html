@@ -1,0 +1,110 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="Description" content="Enter your description here" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+    <title>Art Collection-Login</title>
+  </head>
+  <body>
+    <div class="auth">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6 col-md-8 col-12 mx-auto">
+            <div class="card p-3">
+              <div class="text-center mb-2">
+                <img src="{% static 'gallery.png' %}" alt="logo" class="logoimg" />
+                <h5 class="text-green font-weight-bold mt-2 mb-3">SIGNUP</h5>
+                <br>
+                {{error}}
+              </div>
+              <form action="" method="post">
+                {% csrf_token %}
+                <div class="form-group">
+                  <input
+                    type="email"
+                    class="form-control"
+                    name="email"
+                    placeholder="Enter Email Address"
+                    required
+                  />
+                </div>
+
+                <div class="form-group">
+                  <input
+                    type="password"
+                    class="form-control"
+                    name="password"
+                    placeholder="Enter Password"
+                    required
+                  />
+                </div>
+                <div class="text-right mb-2">
+                  <a href="forget-password-email.html" class="forget"
+                    >Forget Password</a
+                  >
+                </div>
+                <button
+                  type="submit"
+                  class="btn btn-block btn-success font-weight-bold pt-2 pb-2"
+                >
+                  LOGIN <i class="pl-2 fa fa-arrow-right"></i>
+                </button>
+                <a href="{% url 'home:register' %} ">Create account</a>
+              </form>
+              <!-- <div class="text-center mx-auto p-2">
+                
+              </div> -->
+              <hr />
+              <!-- <small class="text-center p-2"                     [login options]
+                >Or Login with one of these services</small
+              >
+              <div class="row">
+                <div class="df mx-auto">
+                  <div class="text-center">
+                    <button
+                      class="btn btn-outline-primary m-1 font-weight-bold"
+                    >
+                      <i class="fa fa-facebook pr-2"></i> Login With Facebook
+                    </button>
+                  </div>
+                  <div class="text-center">
+                    <button
+                      class="btn btn-outline-success m-1 font-weight-bold"
+                    >
+                      <i class="fa fa-google pr-2"></i> Login With Google
+                    </button>
+                  </div>
+                </div>
+                <div class="dn mx-auto">
+                  <button class="btn btn-outline-primary m-1 font-weight-bold">
+                    <i class="fa fa-facebook pr-2"></i> Login With Facebook
+                  </button>
+
+                  <button class="btn btn-outline-success m-1 font-weight-bold">
+                    <i class="fa fa-google pr-2"></i> Login With Google
+                  </button>
+                </div>
+              </div> -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  </body>
+</html>

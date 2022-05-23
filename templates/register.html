@@ -1,0 +1,190 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="Description" content="Enter your description here" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+    <title>Art Collection-Register</title>
+    <style>
+      .imgup {
+  width: 100px;
+  height: 100px;
+
+  border-radius: 50%;
+ 
+}
+.bigimg {
+        width: 100px;
+        height: 100px;
+        object-fit: cover;
+       border-radius: 50%;
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="auth">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6 col-md-8 col-12 mx-auto">
+            <div class="card p-3">
+              <div>
+                
+               
+                <h4>{{error}}</h4>
+                <br>
+              </div>
+             
+              <form action="" method="post">
+                {% csrf_token %}
+
+                <!-- <div class="text-center mb-2">
+                  <img src="https://www.pinclipart.com/picdir/big/148-1486972_mystery-man-avatar-circle-clipart.png" alt="" class="loginlogo" />
+                  
+                  <h5 class=" text-center text-green font-weight-bold mt-2 mb-3">SIGNUP</h5>
+                </div> -->
+
+                <div class="text-center mb-2">
+                  <label for="customFile">
+                    <img src="{% static 'gallery.png' %}" alt="logo" class="logoimg" />
+                    {% comment %} <img src="" id="biimg" alt="" class="bigimg" />
+                    <img src="https://www.pinclipart.com/picdir/big/148-1486972_mystery-man-avatar-circle-clipart.png" id="upimg" alt="" class="imgup" /> {% endcomment %}
+  
+                    {% comment %} <input              [profile picture]
+                      type="file"
+                      style="display: none"
+                      id="customFile"
+                      accept=".png,.jpeg,.jpg"
+                      name="upload"
+                      onchange="showImg(event);"
+                    /> {% endcomment %}
+                  </label>
+                  <br>
+                  <h5 class=" text-center text-green font-weight-bold mt-2 mb-3">SIGNUP</h5>
+                </div>
+
+
+                <div class="form-group">
+                  <input
+                    type="text"
+                    class="form-control"
+                    name="username"
+                    placeholder="Username"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <input
+                    type="email"
+                    class="form-control"
+                    name="email"
+                    placeholder="Enter Email Address"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <input
+                    type="number"
+                    class="form-control"
+                    name="phone"
+                    placeholder="Enter Mobile Number"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <input
+                    type="password"
+                    class="form-control"
+                    name="password"
+                    placeholder="Enter Password"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <input
+                    type="password"
+                    class="form-control"
+                    placeholder="Confirm Password"
+                    name="cpassword"
+                    required
+                  />
+                </div>
+                <button
+                  type="submit"
+                  class="btn btn-block btn-success font-weight-bold pt-2 pb-2"
+                >
+                  SIGNUP <i class="pl-2 fa fa-arrow-right"></i>
+                </button>
+              </form>
+              <div class="text-center mx-auto p-2">
+                <a href="{% url 'home:login' %}">login</a>
+              </div>
+              <hr />
+              {% comment %} <small class="text-center p-2"               sign up other options
+                >Or Sign Up with one of these services</small
+              >
+              <div class="row">
+                <div class="df mx-auto">
+                  <div class="text-center">
+                    <button
+                      class="btn btn-outline-primary m-1 font-weight-bold"
+                    >
+                      <i class="fa fa-facebook pr-2"></i> Login With Facebook
+                    </button>
+                  </div>
+                  <div class="text-center">
+                    <button
+                      class="btn btn-outline-success m-1 font-weight-bold"
+                    >
+                      <i class="fa fa-google pr-2"></i> Login With Google
+                    </button>
+                  </div>
+                </div>
+                <div class="dn mx-auto">
+                  <button class="btn btn-outline-primary m-1 font-weight-bold">
+                    <i class="fa fa-facebook pr-2"></i> Signup With Facebook
+                  </button>
+
+                  <button class="btn btn-outline-success m-1 font-weight-bold">
+                    <i class="fa fa-google pr-2"></i> Signup With Google
+                  </button>
+                </div>
+              </div> {% endcomment %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+
+    <script>
+      function showImg(e) {
+        if (e.target.files.length > 0) {
+          var url = URL.createObjectURL(e.target.files[0]);
+          const prev = document.getElementById('biimg');
+          const upimg = document.getElementById('upimg');
+          upimg.style.display = 'none';
+          const biimg = document.getElementById('biimg');
+          biimg.style.display = 'block';
+          prev.src = url;
+        }
+      }
+    </script>
+
+  </body>
+</html>

@@ -1,0 +1,190 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  outline: none;
+  font-family: 'Poppins', sans-serif;
+}
+/* body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  overflow: hidden;
+  background: url('bg.png'), -webkit-linear-gradient(bottom, #0250c5, #d43f8d);
+} */
+::selection {
+  color: #fff;
+  background: #d43f8d;
+}
+
+.container-box header {
+  font-size: 35px;
+  font-weight: 600;
+  margin: 0 0 30px 0;
+}
+.container-box .form-outer {
+  width: 100%;
+  overflow: hidden;
+}
+.container-box .form-outer form {
+  display: flex;
+  width: 400%;
+}
+.form-outer form .page {
+  width: 25%;
+  transition: margin-left 0.3s ease-in-out;
+}
+.form-outer form .page .title {
+  text-align: left;
+  font-size: 25px;
+  font-weight: 500;
+}
+.form-outer form .page .field {
+  width: 100%;
+  height: 45px;
+  margin: 45px 0;
+  display: flex;
+  position: relative;
+}
+form .page .field .label {
+  position: absolute;
+  top: -30px;
+  font-weight: 500;
+}
+form .page .field input {
+  height: 100%;
+  width: 100%;
+  border: 1px solid lightgrey;
+  border-radius: 5px;
+  padding-left: 15px;
+  font-size: 18px;
+}
+form .page .field select {
+  width: 100%;
+  padding-left: 10px;
+  font-size: 17px;
+  font-weight: 500;
+}
+form .page .field button {
+  width: 100%;
+  height: calc(100% + 5px);
+  border: none;
+  background: #d33f8d;
+  margin-top: -20px;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: 0.5s ease;
+}
+form .page .field button:hover {
+  background: #000;
+}
+form .page .btns button {
+  margin-top: -20px !important;
+}
+form .page .btns button.prev {
+  margin-right: 3px;
+  font-size: 17px;
+}
+form .page .btns button.next {
+  margin-left: 3px;
+}
+.container-box .progress-barr {
+  display: flex;
+  margin: 40px 0;
+  user-select: none;
+}
+.container-box .progress-barr .step {
+  text-align: center;
+  width: 100%;
+  position: relative;
+}
+.container-box .progress-barr .step p {
+  font-weight: 500;
+  font-size: 18px;
+  color: #000;
+  margin-bottom: 8px;
+}
+.progress-barr .step .bullet {
+  height: 25px;
+  width: 25px;
+  border: 2px solid #000;
+  display: inline-block;
+  border-radius: 50%;
+  position: relative;
+  transition: 0.2s;
+  font-weight: 500;
+  font-size: 17px;
+  line-height: 25px;
+}
+.progress-barr .step .bullet.active {
+  border-color: #d43f8d;
+  background: #d43f8d;
+}
+.progress-barr .step .bullet span {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.progress-barr .step .bullet.active span {
+  display: none;
+}
+.progress-barr .step .bullet:before,
+.progress-barr .step .bullet:after {
+  position: absolute;
+  content: '';
+  bottom: 11px;
+  right: -100px;
+  height: 3px;
+  width: 100px;
+  background: #02584d;
+}
+.progress-barr .step .bullet.active:after {
+  background: #d43f8d;
+  transform: scaleX(0);
+  transform-origin: left;
+  animation: animate 0.3s linear forwards;
+}
+@keyframes animate {
+  100% {
+    transform: scaleX(1);
+  }
+}
+.progress-barr .step:last-child .bullet:before,
+.progress-barr .step:last-child .bullet:after {
+  display: none;
+}
+.progress-barr .step p.active {
+  color: #d43f8d;
+  transition: 0.2s linear;
+}
+.progress-barr .step .check {
+  position: absolute;
+  left: 50%;
+  top: 70%;
+  font-size: 15px;
+  transform: translate(-50%, -50%);
+  display: none;
+}
+.progress-barr .step .check.active {
+  display: block;
+  color: #fff;
+}
+.step-form {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: ghostwhite;
+}
+.card {
+  border: 0;
+  box-shadow: 0px 3px 7px gray;
+}
